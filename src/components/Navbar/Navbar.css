@@ -1,0 +1,18 @@
+.logohome {
+  height: 80px;
+  width: 100px;
+}
+
+.mr-auto {
+  display: grid  !important;
+  grid-template-columns: 1fr 1fr 1.5fr;
+  grid-gap: 10px;
+  padding-right: 50px;
+  
+}
+#basic-navbar-nav {
+  display: grid  !important;
+  grid-gap: 10px;
+  justify-self: end;
+  justify-content: end !important;
+}
