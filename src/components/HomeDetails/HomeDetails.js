@@ -16,26 +16,28 @@ class HomeDetails extends React.Component {
       backgroundSize: "contain",
       backgroundRepeat: "no-repeat",
       width: "100%",
-      marginTop: "5%",
-      marginRight: "-2vw",
+      display: "block",
+    //   marginTop: "-9vh",
+      marginRight: "0vw",
     };
     return (
       <div className="home-details">
-        <div className="show-mobile"></div>
+        <div className="show-mobile">
+
+        </div>
 
         <div className="hide-mobile">
           <div className="imgshow">
             <YourSvg style={style} />
             <div className="info-text">
               <a><Typist avgTypingDelay={150}>Hello There!</Typist></a>
-              
+            <br/>
               <Fade delay={2200}>
                 Welcome to your one stop location for accessing library
                 resources at IIT Dharwad.
               </Fade>
             </div>
           </div>
-
 
         </div>
       </div>
