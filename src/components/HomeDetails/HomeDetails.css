@@ -6,16 +6,17 @@
     .imgshow {
         position: relative;
         display: grid;
-        grid-template-columns: 2fr 1fr;
+        grid-template-columns: 2fr 1.5fr;
         height: 115vh;
         width: 100%;
-        grid-gap: -20px;
     }
 
     .info-text {
         padding-left: 1vw;
         padding-right: 1vw;
         padding-bottom: 2vh;
+        padding-top: 5vh;
+        font-size: 2rem;
         font-family: "Quicksand", sans-serif !important;
         color: #752a87;
         
