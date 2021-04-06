@@ -1,0 +1,45 @@
+.desk-footer {
+    background-color: #efbbcf;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    grid-gap: 2vw;
+}
+
+.footer-main {
+    text-align: center;
+    margin: auto;
+    padding: 5%;
+}
+
+.footer-main-content {
+    text-align: center;
+    font-size: 1.1em;
+    color: #752a87;
+    padding: 4% 4% 4% 4%;
+    justify-self: center;
+    
+}
+
+.footer-second {
+    display: grid;
+    grid-template-rows: 1fr 1.5fr;
+}
+
+.list-to-reach {
+    text-align: center;
+    color: #752a87;
+}
+
+.footer-main > img {
+    width: 50%;
+    padding: auto;
+}
+
+.footer-credits {
+    text-align: center;
+    background-color: #752a87;
+    color: #eeeeee
+}

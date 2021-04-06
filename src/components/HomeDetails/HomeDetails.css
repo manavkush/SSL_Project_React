@@ -7,10 +7,11 @@
         position: relative;
         display: grid;
         grid-template-columns: 2fr 1.5fr;
-        height: 115vh;
+        padding: 3% 3% 0 3%;
+        height: 105vh;
         width: 100%;
     }
-
+    
     .info-text {
         padding-left: 1vw;
         padding-right: 1vw;
@@ -25,6 +26,37 @@
     .info-text > a {
         font-size: 4.5rem;
         font-weight: bold;
+    }
+
+    .info-card {
+        display: grid;
+        grid-gap: 5vw;
+        color: #752a87;
+        grid-template-columns: 1fr 1fr;
+        padding: 50px;
+        font-size: 1.1em;
+        font-weight: bolder;
+    }
+    h2 {
+        font-size: 2.5em;
+        font-weight: bold;
+    }
+
+    .info-card-child {
+        border-radius: 10%;
+        background-color: #efbbcf;
+        text-align: center;
+        padding: 10%;
+        font-size: 1.2em;
+    }
+
+    .homepgImg{
+        margin: auto;
+        display: block;
+        height: 200px;
+    }
+    .filt {
+        filter: invert(55%) sepia(93%) saturate(180%) hue-rotate(218deg) brightness(74%) contrast(84%);
     }
 
 }

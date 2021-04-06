@@ -6,6 +6,7 @@ import HomeDetails from "./components/HomeDetails/HomeDetails";
 import Admin from "./components/Admin/Admin"
 import LibStud from "./components/LibStud/LibStud"
 import Teampage from "./components/Teampage/Teampage"
+import Footer from "./components/Footer/Footer"
 
 class App extends React.Component {
   render() {
@@ -63,6 +64,7 @@ class App extends React.Component {
             />
           </Switch>
         </BrowserRouter>
+        <Footer />
       </div>
     );
   }
