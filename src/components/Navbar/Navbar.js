@@ -3,10 +3,11 @@ import MenuItems from "./MenuItems/MenuItems";
 import { Button } from "../Button/Button";
 import "./Navbar.css";
 import Navbar from "react-bootstrap/Navbar";
-import {Nav, NavDropdown} from "react-bootstrap";
+import { Nav, NavDropdown } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import logo from "../HomeDetails/logog.png";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import { GoogleLogin, GoogleLogout } from "react-google-login";
 
 class NavBar extends React.Component {
   state = {
@@ -14,8 +15,8 @@ class NavBar extends React.Component {
     expanded: false,
     email: "",
     tokenId: "",
-    isSigned: "",
-    isAdmin: "",
+    isSigned: false,
+    isAdmin: false,
   };
 
   handleClick = () => {
@@ -24,30 +25,91 @@ class NavBar extends React.Component {
     });
   };
 
+  // Handle Functions
+  signInOnSuccess = (res) => {
+    this.setState({
+      isSigned: true,
+      tokenId: res.tokenId,
+      name: res.profileObj.name,
+      email: res.profileObj.email,
+    });
+  };
+
+  signInOnError = (err) => {
+    console.log(err);
+  };
+
+  signOutOnError = (err) => {
+    console.log(err);
+  };
+
+  signOutOnSuccess = () => {
+    this.setState({
+      isSigned: false,
+      tokenId: "",
+      authRes: "",
+      email: "",
+      isAdmin: false,
+      isVoter: false,
+    });
+    clearInterval(this.state.refresh);
+  };
+
   render() {
     let styles = {
       zIndex: 10,
     };
+
+    // Admin Tab in Navbar
+    let AdminTab = null;
+    if (this.state.isAdmin && this.state.isSigned) {
+      AdminTab = (
+        <Nav.Link
+          href="/admin"
+          className="NavLink nav-link"
+          style={styles}
+          activeClassName="selected"
+          onClick={() => this.setState({ expanded: false })}
+        >
+          <div className="secondary_Text">Admin</div>
+        </Nav.Link>
+      );
+    }
+
     return (
-      <Navbar bg="light" expand="lg">
-  <Navbar.Brand href="#home">
-    <img src={logo} className="logohome" alt="Library Management" />
-  </Navbar.Brand>
-  <Navbar.Toggle aria-controls="basic-navbar-nav" />
-  <Navbar.Collapse id="basic-navbar-nav">
-    <Nav className="mr-auto">
-      <Nav.Link href="#home">Library</Nav.Link>
-      <Nav.Link href="#link">Printer</Nav.Link>
-      <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-        <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-        <NavDropdown.Divider />
-        <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-      </NavDropdown>
-    </Nav>
-  </Navbar.Collapse>
-</Navbar>
+      <Navbar expand="lg" className="NavBar">
+        <Navbar.Brand href="/">
+          <img src={logo} className="logohome" alt="Library Management" />
+        </Navbar.Brand>
+
+        <Navbar.Toggle
+          aria-controls="responsive-navbar-nav"
+          onClick={() => {
+            this.setState({
+              expanded: !this.state.expanded,
+            });
+          }}
+        />
+
+        <Navbar.Collapse id="responsive-navbar-nav" className="nav-menu">
+          <Nav className="navbar-collapse justify-content-end">
+            {AdminTab}
+            <Nav.Link href="/library" className="NavLink nav-link">
+              Library
+            </Nav.Link>
+            <Nav.Link href="/profile" className="NavLink nav-link">
+              Profile
+            </Nav.Link>
+            <Nav.Link href="/printmg" className="NavLink nav-link">
+              Printing
+            </Nav.Link>
+            <Nav.Link href="/team" className="NavLink nav-link">
+              Team
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+        
+      </Navbar>
       // <Navbar expanded={this.state.expanded} className="NavBar" expand="lg">
       //   <NavLink to="" style={styles}>
       //     <img src={logo} className="logohome" alt="Library Management" />
@@ -69,7 +131,7 @@ class NavBar extends React.Component {
       //     <Nav className="mr-auto">
       //       <Nav.Link href="#features">Features</Nav.Link>
       //       <Nav.Link href="#pricing">Pricing</Nav.Link>
-            
+
       //     </Nav>
       //   </Navbar.Collapse>
       // </Navbar>

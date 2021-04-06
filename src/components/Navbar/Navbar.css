@@ -3,16 +3,32 @@
   width: 100px;
 }
 
-.mr-auto {
+.nav-menu {
+  font-size:x-large;
+}
+
+.nav-link {
+  padding: 15px !important;
+}
+
+.NavBar {
+  background-color: #f9fa;
+}
+  
+/* .mr-auto {
   display: grid  !important;
-  grid-template-columns: 1fr 1fr 1.5fr;
+  grid-template-columns: 1fr 1fr ;
   grid-gap: 10px;
   padding-right: 50px;
   
-}
-#basic-navbar-nav {
+} */
+/* #basic-navbar-nav {
   display: grid  !important;
   grid-gap: 10px;
   justify-self: end;
   justify-content: end !important;
+} */
+
+@media screen and (max-width: 900px) {
+  
 }

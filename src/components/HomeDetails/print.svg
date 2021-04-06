@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:svg="http://www.w3.org/2000/svg" id="svg18788" viewBox="0 0 340 340.08" version="1.0">
+  <g id="layer1" fill-rule="evenodd" transform="translate(-193.43 -294.89)">
+    <path id="path15841" d="m193.43 474.97v160h340v-160h-340zm300 40v80h-260v-80h260z"/>
+    <path id="path15851" d="m473.43 294.89l-220 0.1v220h40v-180.1l140.4-0.34v0.34h-0.4v180.08l40-0.01v-220.07z"/>
+    <path id="path15856" d="m413.43 354.9l-100.41 0.35v-0.35h0.29v40h100.12v-40z"/>
+    <path id="path15858" d="m413.84 414.9l-100.41 0.35v-0.35h0.29v40h100.12v-40z"/>
+    <path id="path18771" d="m473.43 534.97l-220 0.35v-0.35 40h220v-40z" fill="#0c0605"/>
+  </g>
+  <metadata>
+    <rdf:RDF>
+      <cc:Work>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://creativecommons.org/licenses/publicdomain/"/>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://openclipart.org/">
+            <dc:title>Openclipart</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:title>printer mini icon</dc:title>
+        <dc:date>2008-02-13T10:45:47</dc:date>
+        <dc:description>clip art, clipart, icon, icon, image, media, mini, mini, png, print, print, printer, printer, public domain, sign, sign, svg, </dc:description>
+        <dc:source>http://openclipart.org/detail/13851/printer-mini-icon-by-artmaster</dc:source>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>artmaster</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>clip art</rdf:li>
+            <rdf:li>clipart</rdf:li>
+            <rdf:li>icon</rdf:li>
+            <rdf:li>image</rdf:li>
+            <rdf:li>media</rdf:li>
+            <rdf:li>mini</rdf:li>
+            <rdf:li>png</rdf:li>
+            <rdf:li>print</rdf:li>
+            <rdf:li>printer</rdf:li>
+            <rdf:li>public domain</rdf:li>
+            <rdf:li>sign</rdf:li>
+            <rdf:li>svg</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+      </cc:Work>
+      <cc:License rdf:about="http://creativecommons.org/licenses/publicdomain/">
+        <cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction"/>
+        <cc:permits rdf:resource="http://creativecommons.org/ns#Distribution"/>
+        <cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+</svg>
