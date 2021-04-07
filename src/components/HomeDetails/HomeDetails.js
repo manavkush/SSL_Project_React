@@ -7,8 +7,17 @@ import Fade from "react-reveal/Fade";
 import Typist from "react-typist";
 import Button from "react-bootstrap/Button";
 // import { ReactComponent as YourSvg } from './your-svg.svg';
+import OnImagesLoaded from "react-on-images-loaded"
 
 class HomeDetails extends React.Component {
+  constructor(props) {
+    super(props);
+    this.props.showLoader();
+  }
+  state = {
+    showImages: false,
+  }
+
   componentDidMount() {
     window.scrollTo(0, 0);
   }
@@ -25,6 +34,19 @@ class HomeDetails extends React.Component {
       marginRight: "0vw",
     };
     return (
+
+      <OnImagesLoaded
+        onLoaded={() => {
+          this.props.hideLoader();
+          this.setState({ showImages: true });
+        }}
+        onTimeout={()=> {
+            this.setState({showImages: true})
+            this.props.hideLoader();
+        }}
+        timeout={7000}
+      >
+
       <div className="home-details">
         <div className="show-mobile">
 
@@ -73,6 +95,7 @@ class HomeDetails extends React.Component {
           </div>
         </div>
       </div>
+      </OnImagesLoaded>
     );
   }
 }
