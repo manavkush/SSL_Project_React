@@ -9,6 +9,7 @@
 .search-bar {
     min-width: 60%;
     margin: auto;
+    padding-top: 4vh;
 }
 
 .search-title > h3 {

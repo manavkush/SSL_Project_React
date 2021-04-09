@@ -8,11 +8,11 @@ function Card(props) {
         <div className="card">
         <Fade delay={250}>
             <div className="card-info">
-                <div className="card-content">Book Name: {book_name}</div>
-                <div className="card-content">Author: {book_author}</div>
-                <div className="card-content">Genre: {book_genre}</div>
-                <div className="card-content">ISBN: {book_ISBN}</div>
-                <div className="card-content">Count (Available) : {book_count}</div>
+                <div className="card-content">Book Name: </div>{book_name}<br />
+                <div className="card-content">Author: </div>{book_author}<br />
+                <div className="card-content">Genre: </div>{book_genre}<br />
+                <div className="card-content">ISBN: </div>{book_ISBN}<br />
+                <div className="card-content">Count (Available) : </div>{book_count}<br />
             </div>
         </Fade>
         </div>
