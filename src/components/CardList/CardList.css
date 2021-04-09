@@ -1,0 +1,8 @@
+.search-content {
+    display: grid;
+    grid-gap: 70px;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    align-content: center;
+    width: 85%;
+	margin: auto;
+}

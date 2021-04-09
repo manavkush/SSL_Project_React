@@ -36,58 +36,60 @@ class App extends React.Component {
         }}
         timeout={7000}
       >
-        <div className="App">
-          <BrowserRouter onUpdate={() => window.scrollTo(0, 0)}>
-            <Navbar />
-            <Switch>
-              <Route
-                path="/"
-                render={withRouter((props) => (
-                  <HomeDetails
-                    {...props}
-                    hideLoader={this.props.hideLoader}
-                    showLoader={this.props.showLoader}
-                  />
-                ))}
+      <BrowserRouter onUpdate={() => window.scrollTo(0, 0)}>
+        <Navbar />
+        <Switch>
+          <Route
+            path="/"
+            exact render={withRouter((props) => (
+              <HomeDetails
+                {...props}
+                hideLoader={this.props.hideLoader}
+                showLoader={this.props.showLoader}
               />
+            ))}
+          />
 
-              <Route
-                path="/admin"
-                render={(props) => (
-                  <Admin
-                    {...props}
-                    hideLoader={this.props.hideLoader}
-                    showLoader={this.props.showLoader}
-                  />
-                )}
+          <Route
+            path="/admin"
+            exact render={
+              (props) => (
+              <Admin
+                {...props}
+                hideLoader={this.props.hideLoader}
+                showLoader={this.props.showLoader}
               />
+            )}
+          />
 
-              <Route
-                path="/library"
-                exact
-                component={withRouter((props) => {
-                  <LibStud
-                    {...props}
-                    hideLoader={this.props.hideLoader}
-                    showLoader={this.props.showLoader}
-                  />;
-                })}
+          <Route
+            path="/library"
+            exact
+            component={withRouter((props) => (
+              <LibStud
+                {...props}
+                hideLoader={this.props.hideLoader}
+                showLoader={this.props.showLoader}
               />
+            ))}
+          />
 
-              <Route
-                path="/team"
-                render={(props) => {
-                  <Teampage
-                    {...props}
-                    hideLoader={this.props.hideLoader}
-                    showLoader={this.props.showLoader}
-                  />;
-                }}
-              />
-            </Switch>
-          </BrowserRouter>
-          <Footer />
-        </div>
+          <Route
+            path="/team"
+            exact render={
+              (props) => {
+              <Teampage
+                {...props}
+                hideLoader={this.props.hideLoader}
+                showLoader={this.props.showLoader}
+              />;
+            }
+            }
+          />
+        </Switch>
+      </BrowserRouter>
+      <Footer />
+        
       </OnImagesLoaded>
     );
   }

@@ -64,15 +64,15 @@ class NavBar extends React.Component {
     let AdminTab = null;
     if (this.state.isAdmin && this.state.isSigned) {
       AdminTab = (
-        <Nav.Link
-          href="/admin"
+        <NavLink
+          to="/admin"
           className="NavLink nav-link"
           style={styles}
           activeClassName="selected"
           onClick={() => this.setState({ expanded: false })}
         >
           <div className="secondary_Text">Admin</div>
-        </Nav.Link>
+        </NavLink>
       );
     }
 
@@ -94,18 +94,18 @@ class NavBar extends React.Component {
         <Navbar.Collapse id="responsive-navbar-nav" className="nav-menu">
           <Nav className="navbar-collapse justify-content-end">
             {AdminTab}
-            <Nav.Link href="/library" className="NavLink nav-link">
+            <NavLink to="/library" className="NavLink nav-link">
               Library
-            </Nav.Link>
-            <Nav.Link href="/profile" className="NavLink nav-link">
+            </NavLink>
+            <NavLink to="/profile" className="NavLink nav-link">
               Profile
-            </Nav.Link>
-            <Nav.Link href="/printmg" className="NavLink nav-link">
+            </NavLink>
+            <NavLink to="/printmg" className="NavLink nav-link">
               Printing
-            </Nav.Link>
-            <Nav.Link href="/team" className="NavLink nav-link">
+            </NavLink>
+            <NavLink to="/team" className="NavLink nav-link">
               Team
-            </Nav.Link>
+            </NavLink>
           </Nav>
         </Navbar.Collapse>
         
