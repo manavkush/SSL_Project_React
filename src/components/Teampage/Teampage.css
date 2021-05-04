@@ -1,0 +1,30 @@
+.teampage__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.teampage__title {
+  padding-top: 4vh;
+  padding-bottom: 4vh;
+  color: #752a87;
+  font-weight: 900;
+  font-size: 4rem;
+}
+
+.teampage__image {
+  object-fit: contain;
+  height: 50vh;
+  padding-bottom: 1vh;
+  padding-top: 1vh;
+}
+
+.teampage_teamcards {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  padding-top: 5vh;
+  padding-bottom: 3vh;
+
+}

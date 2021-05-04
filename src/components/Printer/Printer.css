@@ -1,0 +1,21 @@
+.print-heading {
+    text-align: center;
+    padding: 2vh;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #57447e;
+}
+
+.form-control {
+    width: 55%;
+    font-weight:500;
+}
+
+.form-group > label {
+    color:black;
+    font-weight: 600;
+}
+
+.formClass > input {
+    width: 50%;
+}
