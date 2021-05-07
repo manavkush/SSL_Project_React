@@ -28,12 +28,12 @@ class App extends React.Component {
     return (
       <OnImagesLoaded
         onLoaded={() => {
-          // this.props.hideLoader();
+          this.props.hideLoader();
           this.setState({ showImages: true });
         }}
         onTimeout={() => {
           this.setState({ showImages: true });
-          // this.props.hideLoader();
+          this.props.hideLoader();
         }}
         timeout={7000}
       >

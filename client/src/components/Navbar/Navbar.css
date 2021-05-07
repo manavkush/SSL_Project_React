@@ -1,23 +1,20 @@
 .logohome {
   height: 80px;
   width: 100px;
-  
 }
 
 .nav-menu {
-  font-size:x-large;
-  margin-right: 10vw;
+  font-size: x-large;
+  margin-right: 1vw;
 }
 
-.nav-link {
+.NavLink {
   position: relative;
   padding: 15px !important;
   font-weight: 1000;
 }
 
-/* .nav-link  */
-
-.nav-link:before {
+.NavLink:before {
   position: absolute;
   content: "";
   width: 0;
@@ -29,17 +26,27 @@
   transition: all 0.3s ease-in-out;
 }
 
-.nav-link:hover:before {
-  width:90%;
+.NavLink:hover:before {
+  width: 90%;
   visibility: visible;
 }
-
-
 
 .NavBar {
   background-color: #f9fa;
 }
-  
+
+.button {
+  background-color: #8675a9 !important;
+  border-color: #8675a9 !important;
+  margin: 10px 30px;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 600 !important;
+  color: white;
+  border-radius: 30px !important;
+  padding: 5px 15px !important;
+  font-size: 1.3rem !important;
+}
+
 /* .mr-auto {
   display: grid  !important;
   grid-template-columns: 1fr 1fr ;
@@ -55,5 +62,4 @@
 } */
 
 @media screen and (max-width: 900px) {
-  
 }

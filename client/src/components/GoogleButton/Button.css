@@ -1,0 +1,25 @@
+.button {
+  background-color: #8675a9 !important;
+  border-color: #8675a9 !important;
+  margin: 10px 30px;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 600 !important;
+  color: white;
+  border-radius: 30px !important;
+  padding: 5px 15px !important;
+  font-size: 1.3rem !important;
+}
+.button:focus,
+.button:active {
+  outline: none !important;
+  box-shadow: none;
+}
+
+.button:hover {
+  background-color: #6f2891 !important;
+  border-color: #6f2891 !important;
+  margin: 10px 30px;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 600;
+  border-radius: 30px !important;
+}

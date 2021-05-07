@@ -1,14 +1,14 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
@@ -24,8 +24,8 @@ code {
 .loader-heading:after {
   position: absolute;
   content: "";
-  -webkit-animation: Dots 2s cubic-bezier(0, .39, 1, .68) infinite;
-  animation: Dots 2s cubic-bezier(0, .39, 1, .68) infinite;
+  -webkit-animation: Dots 2s cubic-bezier(0, 0.39, 1, 0.68) infinite;
+  animation: Dots 2s cubic-bezier(0, 0.39, 1, 0.68) infinite;
 }
 
 .loader {
@@ -36,7 +36,9 @@ code {
   border: 4px solid #c3aed6;
   width: 60px;
   height: 45px;
-  position: relative;
+  position: fixed;
+  top: 50%;
+  left: 50%;
   perspective: 150px;
 }
 
@@ -58,60 +60,58 @@ code {
 }
 
 .book .page:nth-child(1) {
-  -webkit-animation: pageTurn 1.2s cubic-bezier(0, .39, 1, .68) 1.6s infinite;
-  animation: pageTurn 1.2s cubic-bezier(0, .39, 1, .68) 1.6s infinite;
+  -webkit-animation: pageTurn 1.2s cubic-bezier(0, 0.39, 1, 0.68) 1.6s infinite;
+  animation: pageTurn 1.2s cubic-bezier(0, 0.39, 1, 0.68) 1.6s infinite;
 }
 
 .book .page:nth-child(2) {
-  -webkit-animation: pageTurn 1.2s cubic-bezier(0, .39, 1, .68) 1.45s infinite;
-  animation: pageTurn 1.2s cubic-bezier(0, .39, 1, .68) 1.45s infinite;
+  -webkit-animation: pageTurn 1.2s cubic-bezier(0, 0.39, 1, 0.68) 1.45s infinite;
+  animation: pageTurn 1.2s cubic-bezier(0, 0.39, 1, 0.68) 1.45s infinite;
 }
 
 .book .page:nth-child(3) {
-  -webkit-animation: pageTurn 1.2s cubic-bezier(0, .39, 1, .68) 1.2s infinite;
-  animation: pageTurn 1.2s cubic-bezier(0, .39, 1, .68) 1.2s infinite;
+  -webkit-animation: pageTurn 1.2s cubic-bezier(0, 0.39, 1, 0.68) 1.2s infinite;
+  animation: pageTurn 1.2s cubic-bezier(0, 0.39, 1, 0.68) 1.2s infinite;
 }
-
 
 /* Page turn */
 
 @-webkit-keyframes pageTurn {
   0% {
-    -webkit-transform: rotateY( 0deg);
-    transform: rotateY( 0deg);
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
   }
   20% {
     background: #4b1e77;
   }
   40% {
     background: rebeccapurple;
-    -webkit-transform: rotateY( -180deg);
-    transform: rotateY( -180deg);
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
   }
   100% {
     background: rebeccapurple;
-    -webkit-transform: rotateY( -180deg);
-    transform: rotateY( -180deg);
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
   }
 }
 
 @keyframes pageTurn {
   0% {
-    transform: rotateY( 0deg);
+    transform: rotateY(0deg);
   }
   20% {
     background: #4b1e77;
   }
   40% {
     background: rebeccapurple;
-    transform: rotateY( -180deg);
+    transform: rotateY(-180deg);
   }
   100% {
     background: rebeccapurple;
-    transform: rotateY( -180deg);
+    transform: rotateY(-180deg);
   }
 }
-
 
 /* Dots */
 
