@@ -1,0 +1,29 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "concurrently": "^6.1.0",
+    "config": "^3.3.6",
+    "sweetalert2-react-content": "^3.3.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server --prefix backend",
+    "server": "nodemon server --prefix backend",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manavkush/portfolio.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/manavkush/portfolio/issues"
+  },
+  "homepage": "https://github.com/manavkush/portfolio#readme"
+}

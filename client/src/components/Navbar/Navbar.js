@@ -9,6 +9,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { GoogleLogin, GoogleLogout } from "react-google-login";
 import Login from "../GoogleButton/Login";
 import Logout from "../GoogleButton/Logout";
+import GetProfile from "./GetProfile/GetProfile";
 
 class NavBar extends React.Component {
   state = {
@@ -76,7 +77,6 @@ class NavBar extends React.Component {
       this.setState({ isAdmin: true });
     }
   }
-
   render() {
     let styles = {
       zIndex: 10,
@@ -120,9 +120,12 @@ class NavBar extends React.Component {
               Library
             </NavLink>
             {this.state.isSigned ? (
-              <NavLink to="/profile" className="NavLink nav-link">
+              <Nav.Link
+                className="NavLink nav-link"
+                onClick={(e) => <GetProfile />}
+              >
                 Profile
-              </NavLink>
+              </Nav.Link>
             ) : null}
             <NavLink to="/printmg" className="NavLink nav-link">
               Printing

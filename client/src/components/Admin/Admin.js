@@ -1,11 +1,14 @@
-import React from "react"
+import React from "react";
+import GetProfile from "../Navbar/GetProfile/GetProfile";
 
 class Admin extends React.Component {
-    render() {
-        return <div>
-
-        </div>
-    }
+  render() {
+    return (
+      <div>
+        <GetProfile />
+      </div>
+    );
+  }
 }
 
 export default Admin;

@@ -1,0 +1,5 @@
+Casing on find function using lodash.
+
+Routes to do tomorrow:
+1) Returning a book
+2) Profile of a student.
