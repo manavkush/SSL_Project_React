@@ -259,42 +259,6 @@ app.post("/deleteAdmin", (req, res) => {
   });
 });
 
-app.post("/getProfile", (req, res) => {
-  const email = req.body.email;
-  console.log(email);
-  const rollno = email.substr(0, 9);
-  console.log(rollno);
-
-  Student.findOne({ student_rollno: rollno }, (err, found) => {
-    let returnObj = {
-      Status: false,
-      StatusMessage: "",
-    };
-
-    if (err) {
-      returnObj.StatusMessage = err;
-    }
-    if (!found) {
-      returnObj.StatusMessage = "Error 404,Student Not Found!!";
-    } else {
-      returnObj.Status = true;
-      returnObj.student_name = found.student_name;
-      returnObj.student_rollno = found.student_rollno;
-      returnObj.student_due = found.student_due;
-      let dig = rollno[4];
-      if (dig == "1") {
-        returnObj.student_branch = "CSE";
-      } else if (dig == "2") {
-        returnObj.student_branch = "EE";
-      } else if (dig == "3") {
-        returnObj.student_branch = "ME";
-      }
-    }
-    console.log(returnObj);
-    res.send(returnObj);
-  });
-});
-
 //===================================================== Admin Searching Student Profile =========================
 app.post("/adminStudentProfile", (req, res) => {
   // const email = req.body.email;
@@ -343,6 +307,7 @@ app.use("/issue", require("./routes/api/issue"));
 app.use("/removeBook", require("./routes/api/removeBook"));
 app.use("/search", require("./routes/api/search"));
 app.use("/addBook", require("./routes/api/addBook"));
+app.use("/getProfile", require("./routes/api/getProfile"));
 
 let PORT = process.env.PORT || 5000;
 app.listen(PORT, function () {
