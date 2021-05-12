@@ -1,17 +1,13 @@
 import React from "react";
-import MenuItems from "./MenuItems/MenuItems";
 import "./Navbar.css";
 import Navbar from "react-bootstrap/Navbar";
-import { Nav, NavDropdown } from "react-bootstrap";
+import { Nav } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import logo from "../HomeDetails/logog.png";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { GoogleLogin, GoogleLogout } from "react-google-login";
 import Login from "../GoogleButton/Login";
 import Logout from "../GoogleButton/Logout";
-import GetProfile from "./GetProfile/GetProfile";
 import Swal from "sweetalert2";
-import axios from "axios";
 
 class NavBar extends React.Component {
   state = {
