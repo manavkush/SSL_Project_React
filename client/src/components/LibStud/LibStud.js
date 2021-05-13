@@ -10,12 +10,49 @@ class LibStud extends React.Component {
     super(props);
     this.props.showLoader();
     this.state = {
+      search_input: "",
       showImages: false,
       searchReady: true,
       bookData: [],
     };
+    // Initially showing all books
+    fetch("/search", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ book_name: "" }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        this.setState({ bookData: data.Books });
+      });
   }
-  handleSearch = (event) => {};
+
+  handleKeyDown = (event) => {
+    if (event.key === "Enter" || event.key === "NumpadEnter") {
+      this.handleSearch(event);
+    }
+  };
+
+  handleSearch = (event) => {
+    let searchText = document.getElementById("searchQuery");
+    console.log(searchText.value);
+    event.preventDefault();
+    var requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ book_name: searchText.value }),
+    };
+    // console.log(requestOptions);
+
+    fetch("/search", requestOptions)
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+        this.setState({ bookData: data.Books });
+      });
+  };
 
   render() {
     return (
@@ -45,17 +82,21 @@ class LibStud extends React.Component {
                 type="text"
                 className="search-text"
                 placeholder="What are you looking for?"
+                id="searchQuery"
+                onKeyDown={this.handleKeyDown}
               />
-              <button type="submit" className="search-button">
+              <button
+                type="submit"
+                className="search-button"
+                onClick={this.handleSearch}
+              >
                 <i class="fa fa-search"></i>
               </button>
             </div>
           </div>
           <div className="search-results">
             <h3>Here are your search results</h3>
-            <CardList
-              books={[{ book_name: "Hello" }, { book_name: "Hello" }]}
-            />
+            <CardList books={this.state.bookData} />
           </div>
           <div className="search-image"></div>
         </div>

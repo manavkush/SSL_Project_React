@@ -7,6 +7,7 @@ const _ = require("lodash");
 // @desc    Search for a book
 
 router.post("/", async (req, res) => {
+  console.log(req);
   const bname = _.toUpper(req.body.book_name);
   console.log(req.body.book_name);
   let returnObject = {
