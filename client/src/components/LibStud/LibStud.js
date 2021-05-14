@@ -49,7 +49,6 @@ class LibStud extends React.Component {
         return response.json();
       })
       .then((data) => {
-        console.log(data);
         this.setState({ bookData: data.Books });
       });
   };

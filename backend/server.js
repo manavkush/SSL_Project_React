@@ -1,5 +1,6 @@
 const express = require("express");
-const connectDB = require("./config/db");
+const dotenv = require("dotenv");
+dotenv.config({ path: __dirname + "/.env" });
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const app = express();
@@ -14,7 +15,8 @@ const multer = require("multer");
 const GridFsStorage = require("multer-gridfs-storage");
 const Grid = require("gridfs-stream");
 const methodOverride = require("method-override");
-const path = require("path");
+const connectDB = require("./config/db");
+// const path = require("path");
 
 app.set("view engine", "ejs");
 
@@ -27,7 +29,6 @@ app.use(fileUpload());
 app.use(cors());
 app.use(bodyParser.json());
 app.use(morgan("dev"));
-
 connectDB();
 
 const bookSchema = new mongoose.Schema({
@@ -44,7 +45,7 @@ const book1 = new Book({
   book_genre: "Algo",
 });
 const book2 = new Book({
-  book_name: "Physics",
+  book_name: "PHYSICS",
   book_author: "HCV",
   book_ISBN: "3333",
   book_genre: "IIT",
@@ -129,10 +130,6 @@ Issue.find({}, function (err, found) {
     }
   } else console.log(err);
 });
-
-// var bname = "physi";
-// bname = (_.toLower(bname));
-// console.log(bname);
 
 //================================================== Searching a book ==================================
 
@@ -320,5 +317,5 @@ app.get("*", (req, res) => {
 
 let PORT = process.env.PORT || 5000;
 app.listen(PORT, function () {
-  console.log(`Server started on port ${PORT}`);
+  console.log(`Server spinning on port ${PORT}`);
 });

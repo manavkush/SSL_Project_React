@@ -1,32 +1,26 @@
 {
-  "name": "lib_backend",
+  "name": "portfolio",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "server": "nodemon server",
+    "server": "nodemon server --prefix backend",
     "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm i --prefix client && npm run build --prefix client"
+    "dev" : " concurrently \"npm run server\" \" npm run client \""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manavkush/portfolio.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/manavkush/portfolio/issues"
+  },
+  "homepage": "https://github.com/manavkush/portfolio#readme",
   "dependencies": {
-    "body-parser": "^1.19.0",
-    "config": "^3.3.6",
-    "cors": "^2.8.5",
-    "express": "^4.17.1",
-    "express-fileupload": "^1.2.0",
-    "gridfs-stream": "^1.1.1",
-    "lodash": "^4.17.21",
-    "method-override": "^3.0.0",
-    "mongoose": "^5.12.8",
-    "morgan": "^1.10.0",
-    "multer": "^1.4.2",
-    "multer-gridfs-storage": "^4.2.0",
-    "path": "^0.12.7"
+    "concurrently": "^6.1.0"
   }
 }

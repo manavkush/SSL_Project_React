@@ -7,7 +7,6 @@ const _ = require("lodash");
 // @desc    Search for a book
 
 router.post("/", async (req, res) => {
-  console.log(req);
   const bname = _.toUpper(req.body.book_name);
   console.log(req.body.book_name);
   let returnObject = {
@@ -33,13 +32,10 @@ router.post("/", async (req, res) => {
         book_genre: item.book.book_genre,
         book_count: item.count,
       };
-      // console.log(obj);
       returnObject.Books.push(obj);
     });
     res.send(returnObject);
   } catch (err) {
-    // console.log(err);
-
     returnObject.Status = false;
     returnObject.StatusMessage = err;
     res.send(returnObject);
