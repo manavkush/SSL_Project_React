@@ -14,6 +14,7 @@ const multer = require("multer");
 const GridFsStorage = require("multer-gridfs-storage");
 const Grid = require("gridfs-stream");
 const methodOverride = require("method-override");
+const path = require("path");
 
 app.set("view engine", "ejs");
 
@@ -308,6 +309,14 @@ app.use("/removeBook", require("./routes/api/removeBook"));
 app.use("/search", require("./routes/api/search"));
 app.use("/addBook", require("./routes/api/addBook"));
 app.use("/getProfile", require("./routes/api/getProfile"));
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
+
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+});
 
 let PORT = process.env.PORT || 5000;
 app.listen(PORT, function () {
