@@ -132,7 +132,7 @@ class NavBar extends React.Component {
                         headers: { "Content-Type": "application/json" },
                         body: JSON.stringify({ email: this.state.email }),
                       };
-                      return fetch(`/getProfile`, requestOptions)
+                      return fetch(`https://library-management-ssl.herokuapp.com/getProfile`, requestOptions)
                         .then((response) => {
                           console.log(response);
                           if (!response.ok) {

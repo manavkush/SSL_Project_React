@@ -16,7 +16,7 @@ class LibStud extends React.Component {
       bookData: [],
     };
     // Initially showing all books
-    fetch("/search", {
+    fetch("https://library-management-ssl.herokuapp.com/search", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ book_name: "" }),
@@ -44,7 +44,7 @@ class LibStud extends React.Component {
     };
     // console.log(requestOptions);
 
-    fetch("/search", requestOptions)
+    fetch("https://library-management-ssl.herokuapp.com/search", requestOptions)
       .then((response) => {
         return response.json();
       })
