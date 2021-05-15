@@ -53,5 +53,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://library-management-ssl.herokuapp.com/"
+  "proxy": "https://library-management-ssl.herokuapp.com"
 }
